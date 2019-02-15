@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraniteHouse.Areas.Admin.Controllers
 {
+    [Area("Admin")] 
     public class ProductsController : Controller
     {
 

@@ -87,11 +87,10 @@ namespace GraniteHouse.Areas.Admin.Controllers
                 var uploads = Path.Combine(webRootPath, SD.ImagesFolder + @"\" + SD.DefaultProductImage);
                 System.IO.File.Copy(uploads, webRootPath + @"\" + SD.ImagesFolder + @"\" + ProductsVM.Products.Id + ".png");
                 productsFromDb.Image = @"\" + SD.ImagesFolder + @"\" + ProductsVM.Products.Id + ".png";
-
-                await _db.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
             }
+
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
 
         }
 

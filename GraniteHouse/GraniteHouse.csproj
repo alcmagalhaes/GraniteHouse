@@ -24,6 +24,9 @@
     <Content Update="Areas\Admin\Views\Products\Details.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Areas\Admin\Views\Products\Delete.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Areas\Admin\Views\Products\Edit.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

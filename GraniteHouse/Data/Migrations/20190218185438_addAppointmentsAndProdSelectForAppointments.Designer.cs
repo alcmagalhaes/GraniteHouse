@@ -298,7 +298,7 @@ namespace GraniteHouse.Data.Migrations
 
             modelBuilder.Entity("GraniteHouse.Models.ProductsSelectedForAppointment", b =>
                 {
-                    b.HasOne("GraniteHouse.Models.Appointments", "Appointment")
+                    b.HasOne("GraniteHouse.Models.Appointments", "Appointments")
                         .WithMany()
                         .HasForeignKey("AppointmentId")
                         .OnDelete(DeleteBehavior.Cascade);

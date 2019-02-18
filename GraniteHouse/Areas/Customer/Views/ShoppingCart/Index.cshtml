@@ -64,31 +64,31 @@
                         <label>Name : </label>
                     </div>
                     <div class="col-12" style="padding-bottom:15px">
-                        <input asp-for="@Model.Appointment.CustomerName" class="form-control">
+                        <input asp-for="@Model.Appointments.CustomerName" class="form-control">
                     </div>
                     <div class="col-12">
                         <label>Phone Number : </label>
                     </div>
                     <div class="col-12" style="padding-bottom:15px">
-                        <input asp-for="@Model.Appointment.CustomerPhoneNumber" class="form-control">
+                        <input asp-for="@Model.Appointments.CustomerPhoneNumber" class="form-control">
                     </div>
                     <div class="col-12">
                         <label>Email : </label>
                     </div>
                     <div class="col-12" style="padding-bottom:15px">
-                        <input asp-for="@Model.Appointment.CustomerEmail" class="form-control">
+                        <input asp-for="@Model.Appointments.CustomerEmail" class="form-control">
                     </div>
                     <div class="col-12">
                         <label>Appointment Date : </label>
                     </div>
                     <div class="col-12" style="padding-bottom:15px">
-                        <input asp-for="@Model.Appointment.AppointmentDate" value="" type="text" id="datepicker" class="form-control">
+                        <input asp-for="@Model.Appointments.AppointmentDate" value="" type="text" id="datepicker" class="form-control">
                     </div>
                     <div class="col-12">
                         <label>Appointment Time : </label>
                     </div>
                     <div class="col-12" style="padding-bottom:15px">
-                        <input asp-for="@Model.Appointment.AppoitmentTime" value="" type="text" class="timepicker form-control">
+                        <input asp-for="@Model.Appointments.AppoitmentTime" value="" type="text" class="timepicker form-control">
                     </div>
                     <div class="col-12">
                         <button type="submit" id="tbnPlaceOrder" class="btn btn-success">Schedule Appointment</button>

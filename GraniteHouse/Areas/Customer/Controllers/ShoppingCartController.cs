@@ -44,5 +44,41 @@ namespace GraniteHouse.Areas.Customer.Controllers
 
             return View(ShoppingCartVM);
         }
+
+        //POST : Index Shopping Cart
+        [HttpPost, ActionName("Index")]
+        [ValidateAntiForgeryToken]
+        public IActionResult IndexAsync()
+        {
+            List<int> lstCartItems = HttpContext.Session.Get<List<int>>("ssShoppingCart");
+
+            ShoppingCartVM.Appointments.AppointmentDate = ShoppingCartVM.Appointments.AppointmentDate
+                .AddHours(ShoppingCartVM.Appointments.AppoitmentTime.Hour)
+                .AddMinutes(ShoppingCartVM.Appointments.AppoitmentTime.Minute);
+            Appointments appointment = ShoppingCartVM.Appointments;
+            _db.Appointments.Add(appointment);
+            _db.SaveChanges();
+
+            int appointmentId = appointment.Id;
+
+            foreach(int productId in lstCartItems)
+            {
+                ProductsSelectedForAppointment productsSelectedForAppointment = new ProductsSelectedForAppointment()
+                {
+                    AppointmentId = appointmentId,
+                    ProductId = productId
+                };
+                _db.ProductsSelectedForAppointments.Add(productsSelectedForAppointment);
+            }
+
+            _db.SaveChanges();
+
+            lstCartItems = new List<int>();
+            HttpContext.Session.Set("ssShoppingCart", lstCartItems);
+
+            return RedirectToAction("Index");
+
+
+        }
     }
 }

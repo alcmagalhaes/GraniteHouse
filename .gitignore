@@ -259,3 +259,5 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/GraniteHouse/wwwroot/lib/bootstrap/dist/css.rar
+/GraniteHouse/wwwroot/lib/bootstrap/dist/js.rar

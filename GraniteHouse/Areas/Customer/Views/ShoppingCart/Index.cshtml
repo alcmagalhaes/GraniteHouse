@@ -88,7 +88,7 @@
                         <label>Appointment Time : </label>
                     </div>
                     <div class="col-12" style="padding-bottom:15px">
-                        <input asp-for="@Model.Appointments.AppoitmentTime" value="" type="text" class="timepicker form-control">
+                        <input asp-for="@Model.Appointments.AppointmentTime" value="" type="text" class="timepicker form-control">
                     </div>
                     <div class="col-12">
                         <button type="submit" id="tbnPlaceOrder" class="btn btn-success">Schedule Appointment</button>
@@ -108,9 +108,10 @@
 {
     <script>
         $(function () {
-            $("#datepicker").datepicker(
-            {
-                minDate: +1, maxDate: "+3M"
+            $("#datepicker").datepicker({
+                minDate: +1,
+                maxDate: "+3M",
+                dateFormat: "dd/mm/yy"
             });
         });
 
@@ -123,6 +124,12 @@
             dynamic: true,
             dropdown: true,
             scrollbar: true
+        });
+
+        $(document).ready(function () {
+            $('#tbnPlaceOrder').click(function () {
+               var x =  $('#datepicker').val()
+            });
         });
     </script>
 }

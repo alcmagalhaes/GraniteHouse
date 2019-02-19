@@ -13,7 +13,7 @@ namespace GraniteHouse.Models
         public DateTime AppointmentDate { get; set; }
 
         [NotMapped]
-        public DateTime AppoitmentTime { get; set; }
+        public DateTime AppointmentTime { get; set; }
 
         public string CustomerName { get; set; }
         public string CustomerPhoneNumber { get; set; }

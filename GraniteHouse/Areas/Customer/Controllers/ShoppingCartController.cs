@@ -53,8 +53,8 @@ namespace GraniteHouse.Areas.Customer.Controllers
             List<int> lstCartItems = HttpContext.Session.Get<List<int>>("ssShoppingCart");
 
             ShoppingCartVM.Appointments.AppointmentDate = ShoppingCartVM.Appointments.AppointmentDate
-                .AddHours(ShoppingCartVM.Appointments.AppoitmentTime.Hour)
-                .AddMinutes(ShoppingCartVM.Appointments.AppoitmentTime.Minute);
+                .AddHours(ShoppingCartVM.Appointments.AppointmentTime.Hour)
+                .AddMinutes(ShoppingCartVM.Appointments.AppointmentTime.Minute);
             Appointments appointment = ShoppingCartVM.Appointments;
             _db.Appointments.Add(appointment);
             _db.SaveChanges();

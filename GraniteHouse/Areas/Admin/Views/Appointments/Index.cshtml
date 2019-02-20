@@ -88,32 +88,45 @@
 
             @foreach (var item in Model.Appointments)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(m => item.SalesPerson.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.AppointmentDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.CustomerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.CustomerPhoneNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.CustomerEmail)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.isConfirmed)
-                </td>
-                <th>
-                    <partial name="_TableButtonPartial" model="item.Id" />
-                </th>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.SalesPerson.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.AppointmentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.CustomerPhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.CustomerEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.isConfirmed)
+                    </td>
+                    <th>
+                        <partial name="_TableButtonPartial" model="item.Id" />
+                    </th>
+                </tr>
             }
 
         </table>
     </div>
 
 </form>
+
+@section Scripts
+    {
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                minDate: +1,
+                maxDate: "+3M",
+                dateFormat: "dd/mm/yy"
+            });
+        });
+    </script>
+}

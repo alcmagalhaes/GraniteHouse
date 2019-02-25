@@ -40,7 +40,7 @@ namespace GraniteHouse.Areas.Admin.Controllers
             };
 
             StringBuilder param = new StringBuilder();
-            param.Append("/Admin/Appointments?productPage=");
+            param.Append("/Admin/Appointments?productPage=:");
             param.Append("&searchName");
             if (searchName != null)
             {
